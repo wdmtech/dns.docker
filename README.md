@@ -22,7 +22,7 @@ Prerequisites: docker and docker-compose
   I tend to keep a global file in ~/development/docker-compose.yml and projects in ~/development/*
   eg. keep this repo is in ~/development/dns.docker  
 
-```
+```yml
 version: '2'
 services:
   dns.docker:
@@ -44,7 +44,7 @@ networks:
 
 Run and test it
 
-```
+```bash
 cd ~
 docker-compose up -d dns.docker
 docker-compose logs -f dns.docker
@@ -86,7 +86,7 @@ for anything in *.docker domain
 
 Now you can add any docker services to the yml file like so:
 
-```
+```yml
   mysql57.docker:
     container_name: mysql57.docker
     image: mysql/mysql-server:5.7.21
@@ -101,7 +101,7 @@ Now you can add any docker services to the yml file like so:
 
 Start, test it
 
-```
+```bash
 docker-compose up mysql57.docker
 dig mysql57.docker
 ```
